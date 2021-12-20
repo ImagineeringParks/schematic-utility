@@ -36,9 +36,9 @@ public class Utils extends JavaPlugin
 	 * Validates that the WorldEdit schematics folder
 	 * exists and returns the location
 	 */
-	private String getSchemDir()
+	protected String getSchemDir()
 	{
-		Plugin worldEdit = this.getServer().getPluginManager().getPlugin("WorldEdit");
+		Plugin worldEdit = getServer().getPluginManager().getPlugin("WorldEdit");
 		String directory = worldEdit.getDataFolder() + File.separator + "schematics";
 		
 		File schemDir = new File(directory);

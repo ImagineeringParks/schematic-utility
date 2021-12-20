@@ -41,7 +41,7 @@ public class Commands extends Utils implements CommandExecutor
     				return false;
     			}
     			
-    			return true;
+    			return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5]);
     		}
     		
     		// Reload the config
