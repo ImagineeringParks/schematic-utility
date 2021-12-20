@@ -1,27 +1,16 @@
-package com.rctfan1999.su;
+package com.sm10259.su;
 
 import java.io.File;
 
-import org.bukkit.event.Listener;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.rctfan1999.su.commands.Commands;
-
-public class SchematicUtility extends JavaPlugin implements Listener
+public class Utils extends JavaPlugin
 {
-	public static SchematicUtility plugin;
-	Commands commands;
-	
-	public void onEnable()
+	public boolean checkPerms(CommandSender sender, String label)
 	{
-		plugin = this;
-		plugin.getServer().getPluginManager().registerEvents((Listener) this, this);
-		
-		commands = new Commands(this);
-		getCommand("schematic").setExecutor(commands);
-		getCommand("schem").setExecutor(commands);
-		getCommand("su").setExecutor(commands);
+		return false;
 	}
 	
 	/*

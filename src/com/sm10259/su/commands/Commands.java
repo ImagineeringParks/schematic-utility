@@ -1,12 +1,12 @@
-package com.rctfan1999.su.commands;
+package com.sm10259.su.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import com.rctfan1999.su.SchematicUtility;
+import com.sm10259.su.*;
 
-public class Commands implements CommandExecutor
+public class Commands extends Utils implements CommandExecutor
 {
 	SchematicUtility plugin;
 
