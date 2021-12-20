@@ -13,5 +13,5 @@ commands:
     schematic:
         aliases: [schem]
         description: SchematicUtility plugin mangement
-        permission: su.core
+        permission: schematic.core
         permission-message: You do not have permission to access this command.
