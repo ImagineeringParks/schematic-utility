@@ -3,5 +3,11 @@
 .project
 .settings/
 
-# Mac filesystem
+# macOS Filesystem
 .DS_Store/
+
+# Build files
+build/
+bin/
+dist/
+out/
