@@ -1,4 +1,4 @@
-package commands;
+package com.rctfan1999.su.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

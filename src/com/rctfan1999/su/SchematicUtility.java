@@ -6,7 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import commands.Commands;
+import com.rctfan1999.su.commands.Commands;
 
 public class SchematicUtility extends JavaPlugin implements Listener
 {
