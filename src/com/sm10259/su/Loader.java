@@ -1,5 +1,7 @@
 package com.sm10259.su;
 
+import java.io.File;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -14,7 +16,7 @@ public class Loader extends Commands
 		super(SchematicUtility);
 	}
 	
-	public static boolean executeCmd(CommandSender sender, String fileName, String worldName, String xStr, String yStr, String zStr)
+	public static boolean executeCmd(CommandSender sender, String filename, String worldName, String xStr, String yStr, String zStr)
 	{
 		World world = Bukkit.getWorld(worldName);
 		if(world == null)
@@ -28,6 +30,8 @@ public class Loader extends Commands
 		int z = Integer.parseInt(zStr);
 		
 		String directory = new Utils().getSchemDir();
+		File schemFile = new File(directory + File.separator + filename + ".schem");
+		
 		return true;
 	}
 }
