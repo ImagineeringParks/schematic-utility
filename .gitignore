@@ -1,3 +1,7 @@
+# Eclipse
+.classpath
+.project
+.settings/
 
-.classpath
-.classpath
+# Mac filesystem
+.DS_Store/
