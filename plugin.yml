@@ -1,17 +1,14 @@
 name: SchematicUtility
-main: com.rctfan1999.su.SchematicUtility
-version: 1.6
+main: com.sm10259.su.SchematicUtility
+version: 1.0
 api-version: 1.14
 author: Sarah Myerson
-website: imagineeringparks.com
+website: sarahmyerson.com
 Description: WorldEdit schematic manager
 depend: [WorldEdit]
 
 load: STARTUP
 
 commands:
-    schematic:
-        aliases: [schem]
+    su:
         description: SchematicUtility plugin mangement
-        permission: schematic.core
-        permission-message: You do not have permission to access this command.
