@@ -1,6 +1,6 @@
 # Schematic Utility
 
-Schematic Utility is a simple plugin that allows you to load and paste WorldEdit schematic files at a given location.
+Schematic Utility is a basic Minecraft plugin that allows you to load and paste WorldEdit schematic files at a given location.
 
 ## Features
 * Load schematics at a specific location.
