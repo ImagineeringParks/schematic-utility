@@ -2,12 +2,12 @@ package com.sm10259.su;
 
 import java.io.File;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class Utils extends JavaPlugin
-{
+public class Utils
+{	
 	/*
 	 * Given the argument, checks if the
 	 * sender has sufficient permissions
@@ -33,23 +33,6 @@ public class Utils extends JavaPlugin
 	}
 	
 	/*
-	 * Validates that the WorldEdit schematics folder
-	 * exists and returns the location
-	 */
-	protected String getSchemDir()
-	{
-		Plugin worldEdit = getServer().getPluginManager().getPlugin("WorldEdit");
-		String directory = worldEdit.getDataFolder() + File.separator + "schematics";
-		
-		File schemDir = new File(directory);
-		
-		// If schematic folder does not exist, create it
-		if (!schemDir.exists())
-			schemDir.mkdirs();
-		return directory;
-	}
-	
-	/*
 	 * Check if a string is null or empty. 
 	 * Returns false if it contains values.
 	 */
@@ -66,5 +49,22 @@ public class Utils extends JavaPlugin
 	    // String may contain values
 	    else
 	      return false;
-	  }
+	 }
+	
+	/*
+	 * Validates that the WorldEdit schematics folder
+	 * exists and returns the location
+	 */
+	public String getSchemDir()
+	{
+		Plugin worldEdit = Bukkit.getPluginManager().getPlugin("WorldEdit");
+		String directory = worldEdit.getDataFolder() + File.separator + "schematics";
+		
+		File schemDir = new File(directory);
+		
+		// If schematic folder does not exist, create it
+		if (!schemDir.exists())
+			schemDir.mkdirs();
+		return directory;
+	}
 }

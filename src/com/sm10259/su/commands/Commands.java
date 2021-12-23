@@ -24,9 +24,9 @@ public class Commands extends Utils implements CommandExecutor
     	 */
     	
     	// No arguments given
-    	if(alias.equalsIgnoreCase("schematic") && args.length < 1)
+    	if(alias.equalsIgnoreCase("su") && args.length < 1)
     	{
-    		sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "Too few arguments. View commands: /schematic help");
+    		sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "Too few arguments. View commands: /su help");
     		return false;
     	}
     	
@@ -37,7 +37,7 @@ public class Commands extends Utils implements CommandExecutor
     		{
     			if(args.length < 6)
     			{
-    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "/schematic load <filename> <world> <x> <y> <z>");
+    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "/su load <filename> <world> <x> <y> <z>");
     				return false;
     			}
     			
@@ -52,7 +52,12 @@ public class Commands extends Utils implements CommandExecutor
     		
     		// View help menu
     		else if(args[0].equalsIgnoreCase("help"))
-    			return printHelpMenu(sender, args[1]);
+    		{
+    			if(args.length > 1)
+    				return printHelpMenu(sender, args[0]);
+    			else
+    				return printHelpMenu(sender, "1");
+    		}
     		
     		// Unexpected argument
     		else
@@ -82,13 +87,13 @@ public class Commands extends Utils implements CommandExecutor
     	if(page == 1)
     	{
     		sender.sendMessage(
-    		ChatColor.GREEN + "/schematic help" + ChatColor.RED + " <page>\n" +
+    		ChatColor.GREEN + "/su help" + ChatColor.RED + " <page>\n" +
     			ChatColor.GRAY + "Shows the help page.\n" +
     				
-    		ChatColor.GREEN + "/schematic load " + ChatColor.RED + "<filename> <world> <x> <y> <z>\n" +
+    		ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z>\n" +
 				ChatColor.GRAY + "Load a schematic.\n" +
     		
-			ChatColor.GREEN + "/schematic reload\n" +
+			ChatColor.GREEN + "/su reload\n" +
 				ChatColor.GRAY + "Reloads the config.\n"
 			);
     	}
