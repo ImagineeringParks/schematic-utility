@@ -23,3 +23,6 @@ Schematic Utility is a simple plugin that allows you to load and paste WorldEdit
   
 ## Configuration File
 ** Coming soon**
+
+## Dependicies
+ This plugin requires [WorldEdit](https://dev.bukkit.org/projects/worldedit) to be installed.
