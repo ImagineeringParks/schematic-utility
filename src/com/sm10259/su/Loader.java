@@ -31,8 +31,12 @@ public class Loader extends Commands
 		super(SchematicUtility);
 	}
 	
+	/*
+	 * Executes load command.
+	 * Returns false if there is an exception
+	 */
 	@SuppressWarnings("deprecation")
-	public static boolean executeCmd(CommandSender sender, String filename, String worldName, String xStr, String yStr, String zStr)
+	public static boolean executeCmd(CommandSender sender, String filename, String worldName, String xStr, String yStr, String zStr, String airStr)
 	{
 		World world = Bukkit.getWorld(worldName);
 		if(world == null)
@@ -40,6 +44,8 @@ public class Loader extends Commands
 			sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "World not found.");
 			return false;
 		}
+		
+		boolean air = Boolean.parseBoolean(airStr);
 		
 		int x = Integer.parseInt(xStr);
 		int y = Integer.parseInt(yStr);
@@ -63,7 +69,7 @@ public class Loader extends Commands
             	Operation operation = new ClipboardHolder(clipboard)
             			.createPaste(editSession)
                         .to(BlockVector3.at(x, y, z))
-                        .ignoreAirBlocks(false)
+                        .ignoreAirBlocks(air)
                         .build();
 
                 try

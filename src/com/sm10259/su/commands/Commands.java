@@ -37,11 +37,17 @@ public class Commands extends Utils implements CommandExecutor
     		{
     			if(args.length < 6)
     			{
-    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "/su load <filename> <world> <x> <y> <z>");
+    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "/su load <filename> <world> <x> <y> <z> [ignore air]");
     				return false;
     			}
     			
-    			return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5]);
+    			// User did not specify ignore air blocks
+    			if(args.length == 6)
+    				return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], "false");
+    			
+    			// User specified ignore air blocks
+    			else if(args.length == 7)
+    				return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], args[6]);
     		}
     		
     		// Reload the config
@@ -90,7 +96,7 @@ public class Commands extends Utils implements CommandExecutor
     		ChatColor.GREEN + "/su help" + ChatColor.RED + " <page>\n" +
     			ChatColor.GRAY + "Shows the help page.\n" +
     				
-    		ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z>\n" +
+    		ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z> [ignore air]\n" +
 				ChatColor.GRAY + "Load a schematic.\n" +
     		
 			ChatColor.GREEN + "/su reload\n" +
