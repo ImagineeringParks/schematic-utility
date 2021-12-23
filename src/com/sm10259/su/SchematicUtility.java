@@ -20,12 +20,10 @@ public class SchematicUtility extends JavaPlugin implements Listener
 		
 		commands = new Commands(this);
 		getCommand("su").setExecutor(commands);
-		
-		this.logger.info("Thank you for using SchematicUtility!");
 	}
 	
 	public void onDisable()
 	{
-		this.logger.info("Thank you for using SchematicUtility! Goodbye.");
+		
 	}
 }
