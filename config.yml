@@ -1,8 +1,8 @@
 messages:
     load: "%filename% has been loaded."
     
-    # Setting this to true will disable the load message
-    disable_message: false
+    # Setting this to false will disable the load message
+    enabled: true
     
     # Placeholders
     # %filename% - Schematic file name

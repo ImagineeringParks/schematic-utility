@@ -57,6 +57,8 @@ public class Commands extends Utils implements CommandExecutor
     		// Reload the config
     		else if(args[0].equalsIgnoreCase("reload"))
     		{
+    			plugin.reloadConfig();
+    			sender.sendMessage(ChatColor.AQUA + "[SchematicUtility]" + ChatColor.GREEN + " has been reloaded!");
     			return true;
     		}
     		
