@@ -22,13 +22,14 @@ import com.sk89q.worldedit.function.operation.Operation;
 import com.sk89q.worldedit.function.operation.Operations;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.session.ClipboardHolder;
-import com.sm10259.su.commands.Commands;
 
-public class Loader extends Commands
+public class Loader
 {
-	public Loader(SchematicUtility SchematicUtility)
+	private static SchematicUtility plugin;
+	
+	public Loader(SchematicUtility plugin)
 	{
-		super(SchematicUtility);
+		Loader.plugin = plugin;
 	}
 	
 	/*
@@ -94,6 +95,17 @@ public class Loader extends Commands
         	sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "An internal error occured.");
             e.printStackTrace();
             return false;
+        }
+        
+        // If the config lets us send a confirmation message, do it
+        if(plugin.getConfig().getBoolean("messages.disable_message"))
+        {
+        	
+        	// Replace the %filename% placeholder with the filename
+        	String msg = plugin.getConfig().getString("messages.load");
+        	msg = msg.replace("%filename%", filename);
+        	
+        	sender.sendMessage(msg);
         }
 		
 		return true;
