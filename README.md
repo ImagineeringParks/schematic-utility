@@ -13,7 +13,7 @@ Version 1.2 is the second public release and we've introduced a config file! ðŸŽ
 You can now set a custom message when a schematic is loaded (or disable it ðŸ˜Ž, totally up to you)
 
 ## Commands
-* `/su help <page>`
+* `/su help [page]`
   * Shows the help menu.
 * `/su load <filename> <world> <x> <y> <z> [ignore air]`
   * Load and paste structure from the schematic file.
