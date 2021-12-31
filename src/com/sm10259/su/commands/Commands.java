@@ -9,10 +9,10 @@ import com.sm10259.su.*;
 
 public class Commands extends Utils implements CommandExecutor
 {
-	SchematicUtility plugin;
+	private SchematicUtility plugin;
 
-    public Commands(SchematicUtility SchematicUtility) {
-        plugin = SchematicUtility;
+    public Commands(SchematicUtility plugin) {
+        this.plugin = plugin;
     }
     
     @Override
@@ -43,11 +43,15 @@ public class Commands extends Utils implements CommandExecutor
     			
     			// User did not specify ignore air blocks
     			if(args.length == 6)
-    				return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], "false");
-    			
-    			// User specified ignore air blocks
+    			{
+					new Loader(plugin);
+					return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], "false");
+				}
     			else if(args.length == 7)
-    				return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], args[6]);
+    			{
+					new Loader(plugin);
+					return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], args[6]);
+				}
     		}
     		
     		// Reload the config
