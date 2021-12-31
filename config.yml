@@ -1,0 +1,7 @@
+messages:
+    # If you leave this null it will disable this message
+    load: "You have joined the queue for %queue_name%. You are in position %position%."
+    
+    # Placeholders
+    # %filename% - Schematic file name
+    
