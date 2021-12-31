@@ -40,3 +40,7 @@ messages:
 
 ## Dependencies
  This plugin requires [WorldEdit](https://dev.bukkit.org/projects/worldedit) to be installed.
+
+##
+_Want to help this project and others like it in development?
+[Consider buying me a coffee!](https://www.buymeacoffee.com/sarahmyerson)_
