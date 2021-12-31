@@ -20,6 +20,11 @@ public class SchematicUtility extends JavaPlugin implements Listener
 		
 		commands = new Commands(this);
 		getCommand("su").setExecutor(commands);
+		
+		// Load config and queue storage files
+		this.logger.info("Loading config.yml");
+		saveDefaultConfig();
+		this.logger.info("Successfully loaded config.yml");
 	}
 	
 	public void onDisable()
