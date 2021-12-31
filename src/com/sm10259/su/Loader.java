@@ -98,7 +98,7 @@ public class Loader
         }
         
         // If the config lets us send a confirmation message, do it
-        if(plugin.getConfig().getBoolean("messages.disable_message"))
+        if(plugin.getConfig().getBoolean("messages.enabled"))
         {
         	
         	// Replace the %filename% placeholder with the filename
