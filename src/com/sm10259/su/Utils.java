@@ -7,7 +7,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 
 public class Utils
-{	
+{
+	
 	/*
 	 * Given the argument, checks if the
 	 * sender has sufficient permissions
