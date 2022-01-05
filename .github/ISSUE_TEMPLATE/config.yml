@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Help Center
+    url: https://sm10259.atlassian.net/servicedesk/customer/portals
+    about: Submit a help ticket and ask questions here.
