@@ -1,6 +1,6 @@
 name: SchematicUtility
 main: com.sm10259.su.SchematicUtility
-version: 1.2
+version: 1.3
 api-version: 1.14
 author: Sarah Myerson
 website: sarahmyerson.com
@@ -12,3 +12,16 @@ load: STARTUP
 commands:
     su:
         description: SchematicUtility plugin mangement
+
+permissions:
+  schematics.*:
+    description: Gives access to all SchematicUtility commands.
+    children:
+      schematics.admin: true
+      schematics.load: true
+  schematics.admin:
+    description: Allows access to all commands.
+    default: op
+  schematics.load:
+    description: Allows access to the load and help command.
+    default: op

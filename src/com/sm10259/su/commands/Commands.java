@@ -10,10 +10,11 @@ import com.sm10259.su.*;
 public class Commands extends Utils implements CommandExecutor
 {
 	private SchematicUtility plugin;
-
-    public Commands(SchematicUtility plugin) {
-        this.plugin = plugin;
-    }
+	
+	public Commands(SchematicUtility plugin)
+	{
+		this.plugin = plugin;
+	}
     
     @Override
 	public boolean onCommand(CommandSender sender, Command command, String alias, String[] args)
@@ -76,6 +77,10 @@ public class Commands extends Utils implements CommandExecutor
     			sender.sendMessage("Command not found");
     			
     	}
+    	
+    	// No permissions
+		else
+			sender.sendMessage("You do not have permission to access this command.");
     	return false;
 	}
     
@@ -98,16 +103,24 @@ public class Commands extends Utils implements CommandExecutor
     	// Help Page 1
     	if(page == 1)
     	{
-    		sender.sendMessage(
-    		ChatColor.GREEN + "/su help" + ChatColor.RED + " <page>\n" +
-    			ChatColor.GRAY + "Shows the help page.\n" +
-    				
-    		ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z> [ignore air]\n" +
-				ChatColor.GRAY + "Load a schematic.\n" +
+    		sender.sendMessage(ChatColor.GREEN + "/su help" + ChatColor.RED + " <page>\n" +
+    			ChatColor.GRAY + "Shows the help page.\n");
     		
-			ChatColor.GREEN + "/su reload\n" +
-				ChatColor.GRAY + "Reloads the config.\n"
-			);
+    		if(checkPerms(sender, "load"))
+    		{
+    			sender.sendMessage(ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z> [ignore air]\n" +
+    					ChatColor.GRAY + "Load a schematic.\n");
+    		}
+    		
+    		if(checkPerms(sender, "reload"))
+    		{
+    			sender.sendMessage(ChatColor.GREEN + "/su reload\n" +
+    					ChatColor.GRAY + "Reloads the config.\n");
+    		}
+    	}
+    	else
+    	{
+    		sender.sendMessage(ChatColor.RED + "Page "+ ChatColor.GRAY + page +" does not exist.");
     	}
     	return true;
     }
