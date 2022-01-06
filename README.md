@@ -1,5 +1,5 @@
 # Schematic Utility
-![GitHub](https://img.shields.io/github/license/ImagineeringParks/schematic-utility?color=bright-green&label=License) ![GitHub All Releases](https://img.shields.io/github/downloads-pre/ImagineeringParks/schematic-utility/latest/total?color=green&label=Downloads%40latest)
+![GitHub](https://img.shields.io/github/license/ImagineeringParks/schematic-utility?color=bright-green&label=License) ![GitHub All Releases](https://img.shields.io/github/downloads/ImagineeringParks/schematic-utility/v1.2/total)
 
 Schematic Utility is a basic Minecraft plugin that allows you to load and paste WorldEdit schematic files at a given location.
 
