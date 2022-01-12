@@ -15,7 +15,7 @@ You can now set a custom message when a schematic is loaded (or disable it 😎,
 ## Commands
 * `/su help [page]`
   * Shows the help menu.
-* `/su load <filename> <world> <x> <y> <z> [flags]`
+* `/su load <filename> <world> <x> <y> <z> [-a]`
   * Load and paste structure from the schematic file.
 * `/su reload`
   * Reloads the config.
