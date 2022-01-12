@@ -3,7 +3,7 @@ main: com.sm10259.su.SchematicUtility
 version: 1.3
 api-version: 1.14
 author: Sarah Myerson
-website: sarahmyerson.com
+website: https://www.spigotmc.org/resources/schematic-utility.98658/
 Description: WorldEdit schematic manager
 depend: [WorldEdit]
 
