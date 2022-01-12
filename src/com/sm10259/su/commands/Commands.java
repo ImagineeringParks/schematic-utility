@@ -24,6 +24,8 @@ public class Commands extends Utils implements CommandExecutor
     	 * Alias: [schem, su]
     	 */
     	
+    	boolean ignoreAir = false;
+    	
     	// No arguments given
     	if(alias.equalsIgnoreCase("su") && args.length < 1)
     	{
@@ -38,21 +40,24 @@ public class Commands extends Utils implements CommandExecutor
     		{
     			if(args.length < 6)
     			{
-    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "/su load <filename> <world> <x> <y> <z> [ignore air]");
+    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "/su load <filename> <world> <x> <y> <z> [-a]");
     				return false;
     			}
     			
-    			// User did not specify ignore air blocks
-    			if(args.length == 6)
+    			// User wants to ignore air blocks
+    			if(args.length == 7 && args[6].equalsIgnoreCase("-a"))
+    				ignoreAir = true;
+    			else
     			{
-					new Loader(plugin);
-					return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], "false");
-				}
-    			else if(args.length == 7)
-    			{
-					new Loader(plugin);
-					return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], args[6]);
-				}
+    				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED +
+    						"Unexpected flag "+ ChatColor.RESET + args[6] +
+    						ChatColor.RED + "Expected -a.");
+    				return false;
+    			}
+    				
+    			
+    			new Loader(plugin);
+				return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], ignoreAir);
     		}
     		
     		// Reload the config
@@ -108,7 +113,7 @@ public class Commands extends Utils implements CommandExecutor
     		
     		if(checkPerms(sender, "load"))
     		{
-    			sender.sendMessage(ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z> [ignore air]\n" +
+    			sender.sendMessage(ChatColor.GREEN + "/su load " + ChatColor.RED + "<filename> <world> <x> <y> <z> [-a]\n" +
     					ChatColor.GRAY + "Load a schematic.\n");
     		}
     		
