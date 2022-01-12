@@ -8,9 +8,11 @@ Schematic Utility is a basic Minecraft plugin that allows you to load and paste 
 * Load schematics in another world.
 * Allows you to use command blocks or the console to paste schematics.
 
-### Whats New in 1.2? 🚀
-Version 1.2 is the second public release and we've introduced a config file! 🎉
-You can now set a custom message when a schematic is loaded (or disable it 😎, totally up to you)
+## What's New in 1.3? 🚀
+- Automatically check for new updates! ✨
+- Integrated WorldEdit's `-a` air flag.
+- Load command is now:
+  - `/su load <filename> <world> <x> <y> <z> [-a]`
 
 ## Commands
 * `/su help [page]`
