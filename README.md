@@ -12,6 +12,7 @@ Schematic Utility is a basic Minecraft plugin that allows you to load and paste 
 - Integrated WorldEdit's `-a` air flag.
 - Load command is now:
   - `/su load <filename> <world> <x> <y> <z> [-a]`
+- Help menu will only show commands that users have permissions for.
 
 ## Commands
 * `/su help [page]`
