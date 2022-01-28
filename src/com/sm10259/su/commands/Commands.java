@@ -45,16 +45,18 @@ public class Commands extends Utils implements CommandExecutor
     			}
     			
     			// User wants to ignore air blocks
-    			if(args.length == 7 && args[6].equalsIgnoreCase("-a"))
+    			if(args.length == 6)
+    				ignoreAir = false;
+    			
+    			// User wants to ignore air blocks
+    			else if(args.length == 7 && args[6].equalsIgnoreCase("-a"))
     				ignoreAir = true;
     			else
     			{
     				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED +
-    						"Unexpected flag "+ ChatColor.RESET + args[6] +
-    						ChatColor.RED + "Expected -a.");
+    						"Unexpected flag " + args[6] + ". Expected -a.");
     				return false;
     			}
-    				
     			
     			new Loader(plugin);
 				return Loader.executeCmd(sender, args[1], args[2], args[3], args[4], args[5], ignoreAir);

@@ -56,7 +56,7 @@ public class Utils
 	 * Validates that the WorldEdit schematics folder
 	 * exists and returns the location
 	 */
-	public String getSchemDir()
+	protected String getSchemDir()
 	{
 		Plugin worldEdit = Bukkit.getPluginManager().getPlugin("WorldEdit");
 		String directory = worldEdit.getDataFolder() + File.separator + "schematics";

@@ -55,13 +55,13 @@ public class Loader
 		
 		// Load in the schematic
 		com.sk89q.worldedit.world.World adaptedWorld = BukkitAdapter.adapt(world);
-
+		
         ClipboardFormat format = ClipboardFormats.findByFile(file);
-
+        
         try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
-
+        	
             Clipboard clipboard = reader.read();
-
+            
             try (EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld,
                     -1))
             {
