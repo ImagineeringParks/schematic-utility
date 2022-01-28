@@ -19,8 +19,8 @@ public class SchematicUtility extends JavaPlugin implements Listener
 		plugin.getServer().getPluginManager().registerEvents((Listener) this, this);
 		
 		// Check for updates
-		int releaseVersion = 0;
-		int currentVersion = Integer.parseInt(plugin.getDescription().getVersion());
+		double releaseVersion = 0.0;
+		double currentVersion = Double.parseDouble(plugin.getDescription().getVersion());
 		
 		try {
 			releaseVersion = new UpdateChecker(98658).getVersion();
@@ -36,7 +36,7 @@ public class SchematicUtility extends JavaPlugin implements Listener
 		
 		else if(releaseVersion < currentVersion)
 		{
-			this.logger.info("You are running an unreleased version. How.. how did you get this?");
+			this.logger.info("You are running an unreleased version.");
 		}
 		
 		else
