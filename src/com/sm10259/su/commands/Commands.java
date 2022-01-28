@@ -54,8 +54,7 @@ public class Commands extends Utils implements CommandExecutor
     			else
     			{
     				sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED +
-    						"Unexpected flag "+ ChatColor.RESET + args[6] +
-    						ChatColor.RED + "Expected -a.");
+    						"Unexpected flag " + args[6] + ". Expected -a.");
     				return false;
     			}
     				
