@@ -14,16 +14,16 @@ public class UpdateChecker
 		this.resourceId = resourceId;
     }
 	
-	public int getVersion() throws IOException
+	public double getVersion() throws IOException
 	{
 		URL url = new URL("https://api.spigotmc.org/legacy/update.php?resource="+ resourceId);
 		
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
 		    for (String line; (line = reader.readLine()) != null;)
 		    {
-		        return Integer.parseInt(line);
+		        return Double.parseDouble(line);
 		    }
 		}
-		return -1;
+		return -1.0;
 	}
 }
