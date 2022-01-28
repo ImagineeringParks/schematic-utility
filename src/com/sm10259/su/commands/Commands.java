@@ -45,7 +45,11 @@ public class Commands extends Utils implements CommandExecutor
     			}
     			
     			// User wants to ignore air blocks
-    			if(args.length == 7 && args[6].equalsIgnoreCase("-a"))
+    			if(args.length == 6)
+    				ignoreAir = false;
+    			
+    			// User wants to ignore air blocks
+    			else if(args.length == 7 && args[6].equalsIgnoreCase("-a"))
     				ignoreAir = true;
     			else
     			{
