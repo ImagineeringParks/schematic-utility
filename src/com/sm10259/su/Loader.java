@@ -56,55 +56,55 @@ public class Loader
 		// Load in the schematic
 		com.sk89q.worldedit.world.World adaptedWorld = BukkitAdapter.adapt(world);
 		
-        ClipboardFormat format = ClipboardFormats.findByFile(file);
+		/* Modified from: https://madelinemiller.dev/blog/how-to-load-and-save-schematics-with-the-worldedit-api/ */
+        	ClipboardFormat format = ClipboardFormats.findByFile(file);
         
-        try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
+        	try (ClipboardReader reader = format.getReader(new FileInputStream(file)))
+		{
         	
-            Clipboard clipboard = reader.read();
+            		Clipboard clipboard = reader.read();
             
-            try (EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld,
-                    -1))
-            {
-            	Operation operation = new ClipboardHolder(clipboard)
-            			.createPaste(editSession)
-                        .to(BlockVector3.at(x, y, z))
-                        .ignoreAirBlocks(ignoreAir)
-                        .build();
+            		try (EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld,-1))
+           		{
+            			Operation operation = new ClipboardHolder(clipboard)
+            				.createPaste(editSession)
+                        		.to(BlockVector3.at(x, y, z))
+                        		.ignoreAirBlocks(ignoreAir)
+                       			 .build();
 
-                try
-                {
-                    Operations.complete(operation);
-                    editSession.flushSession();
-                }
-                catch (WorldEditException e)
-                {
-                    sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "An internal error occured.");
-                    e.printStackTrace();
-                    return false;
-                }
-            }
+                		try
+                		{
+                   			Operations.complete(operation);
+                    			editSession.flushSession();
+                		}
+                		catch (WorldEditException e)
+                		{
+                    			sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "An internal error occured.");
+                    			e.printStackTrace();
+                    			return false;
+                	}
+		}
 
 
-        } catch (FileNotFoundException e) {
-        	sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "'"+ filename +".schem' was not found.");
-            e.printStackTrace();
-            return false;
-        } catch (IOException e) {
-        	sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "An internal error occured.");
-            e.printStackTrace();
-            return false;
-        }
+        	} catch (FileNotFoundException e) {
+        		sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "'"+ filename +".schem' was not found.");
+            		e.printStackTrace();
+            		return false;
+        	} catch (IOException e) {
+        		sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "An internal error occured.");
+            		e.printStackTrace();
+            		return false;
+        	}
         
-        // If the config lets us send a confirmation message, do it
-        if(plugin.getConfig().getBoolean("messages.enabled"))
-        {
+        	// If the config lets us send a confirmation message, do it
+        	if(plugin.getConfig().getBoolean("messages.enabled"))
+        	{
         	
-        	// Replace the %filename% placeholder with the filename
-        	String msg = plugin.getConfig().getString("messages.load");
-        	msg = msg.replace("%filename%", filename);
-        	
-        	sender.sendMessage(msg);
-        }
+        		// Replace the %filename% placeholder with the filename
+        		String msg = plugin.getConfig().getString("messages.load");
+        		msg = msg.replace("%filename%", filename);
+        		sender.sendMessage(msg);
+        	}
 		
 		return true;
 	}
