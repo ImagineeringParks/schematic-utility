@@ -84,8 +84,8 @@ public class Loader
                     			return false;
                 	}
 		}
-
-
+		/* End modified external code */
+		
         	} catch (FileNotFoundException e) {
         		sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "'"+ filename +".schem' was not found.");
             		e.printStackTrace();
@@ -94,7 +94,7 @@ public class Loader
         		sender.sendMessage(ChatColor.GRAY + "- " + ChatColor.RED + "An internal error occured.");
             		e.printStackTrace();
             		return false;
-        	}
+		}
         
         	// If the config lets us send a confirmation message, do it
         	if(plugin.getConfig().getBoolean("messages.enabled"))
